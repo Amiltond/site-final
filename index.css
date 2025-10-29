@@ -19,25 +19,26 @@ body {
     min-height: 100vh;                       
 }
 
-.container {
+container {
     max-width: 1000px; 
     margin: 20px auto 40px auto; 
     padding: 30px 20px; 
     color:white; 
     border-radius: 10px; 
+    flex-grow: 1;
 }
 
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1px;
 }
 
 h1 {
     color: var(--cor-principal); 
-    font-size: 29px;
-    margin-bottom: 5px;
-    margin-top: 0px;
+    font-size: 27px;
     border-bottom: solid 2px;
+
 }
 
 h2 {
@@ -68,11 +69,12 @@ p {
     font-size: 16px; 
     color: var(--cor-principal); 
     font-weight: normal; 
-    text-align: center; 
+    text-align: left; 
     max-width: 900px; 
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6; 
+
 }
 
 
@@ -83,7 +85,7 @@ strong {
 
 
 .destaque-imagem {
-    border-top: 3px solid var(--cor-principal); 
+    border-top:3px solid;
     padding-top: 15px;
     font-weight: bold; 
     font-size: 20px; 
@@ -104,11 +106,12 @@ nav {
     margin-top: 1px;
     margin-bottom: 5px; 
     
+    
 }
 
 nav a {
     
-    margin: 0 15px; 
+    margin-top: 5px; 
     color: var(--cor-principal); 
     text-decoration: none; 
     font-weight: bold;
@@ -150,7 +153,6 @@ figcaption {
 }
 
 footer {
-    
     background-color: #444444;
     color: #E7E3DB;
     font-size: 10px;
@@ -269,3 +271,5 @@ html {
 main {
     flex-grow: 1; 
 }
+
+
