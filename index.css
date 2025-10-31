@@ -1,50 +1,49 @@
 :root {
     --cor-principal: #333333; 
     --cor-destaque-verde: #3a6d1a; 
-    --cor-fundo-principal: #F0EDE5; 
+    --cor-fundo-principal: #F0EDE5; /* Fundo suave */
     --cor-fundo-container: white;
     --cor-fundo-lista: #faf7f0;
 }
 
+/* Base e Tipografia */
 body {
-    font-family: sans-serif;
-    background-color:white;
+    font-family: 'Arial', sans-serif; /* Fonte secundária para leitura */
+    background-color: var(--cor-fundo-principal); /* Fundo suave */
     text-align: center;
     margin: 0;
     padding: 0;
-    position: relative; 
-
-    display: flex;         
+    display: flex; 
     flex-direction: column; 
-    min-height: 100vh;                       
+    min-height: 100vh; 
 }
 
-container {
+/* Container Principal (Usando DIV, não tag customizada) */
+.container {
     max-width: 1000px; 
     margin: 20px auto 40px auto; 
     padding: 30px 20px; 
-    color:white; 
-    border-radius: 10px; 
+    background-color: var(--cor-fundo-container); /* Destaca o conteúdo no fundo suave */
+    border-radius: 12px; /* Cantos mais suaves */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     flex-grow: 1;
 }
 
-
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 1px;
+    color: var(--cor-principal); 
+    margin-bottom: 10px;
 }
 
 h1 {
-    color: var(--cor-principal); 
-    font-size: 27px;
+    font-size: 28px;
+    padding-bottom: 5px;
     border-bottom: solid 2px;
-
 }
 
 h2 {
-    color: var(--cor-principal); 
-    font-size: 18px; 
-    margin-bottom: 5px;
+    font-size: 20px; 
+    margin-top: 5px;
     padding-bottom: 5px;
     max-width: 900px;
     margin-left: auto;
@@ -53,79 +52,85 @@ h2 {
 
 h3 {
     color: var(--cor-destaque-verde); 
-    font-size: 20px;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    font-size: 22px;
+    margin-top: 35px;
+    margin-bottom: 10px;
     text-align: left; 
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 35px auto 10px auto;
     padding: 5px 0;
 }
 
 p {
-    
     margin-top: 1px;
     font-size: 16px; 
     color: var(--cor-principal); 
-    font-weight: normal; 
     text-align: left; 
     max-width: 900px; 
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6; 
-
 }
-
 
 strong {
     color: var(--cor-destaque-verde); 
     font-weight: bold;
 }
 
-
+/* Imagens e Figuras */
 .destaque-imagem {
-    border-top:3px solid;
+    border-top: 3px solid var(--cor-destaque-verde);
     padding-top: 15px;
     font-weight: bold; 
     font-size: 20px; 
     text-align: center;
+    color: var(--cor-principal);
+    max-width: 900px;
+    margin: 20px auto 0 auto;
 }
 
 img {
-    max-width: 1000px; 
-    width: 100%; 
-    
+    max-width: 100%; 
+    height: auto; 
     display: block;
     margin: 20px auto;
-    border-radius: 100px;
+    border-radius: 12px; /* Arredondamento suave */
 }
 
+figcaption {
+    font-size: 15px;
+    color: var(--cor-principal);
+    margin-top: 5px;
+    font-style: italic;
+    font-weight: normal;
+}
 
+/* Navegação e Links */
 nav {
-    margin-top: 1px;
-    margin-bottom: 5px; 
-    
-    
+    margin-top: 10px; 
+    margin-bottom: 15px;
+    display: flex; /* Flexbox para alinhar links lado a lado se possível */
+    flex-wrap: wrap; /* Quebra para linhas menores */
+    justify-content: center;
 }
 
 nav a {
-    
-    margin-top: 5px; 
+    margin: 0 10px 5px 10px; /* Espaçamento entre links */
+    padding: 5px 0;
     color: var(--cor-principal); 
     text-decoration: none; 
     font-weight: bold;
     font-size: 15px;
-    position: relative; 
     transition: color 0.3s ease; 
-    border-bottom: solid 2px;
+    border-bottom: 2px solid transparent; /* Borda transparente para transição */
 }
 
 nav a:hover {
     color: var(--cor-destaque-verde); 
-    text-decoration: none; 
+    border-bottom: 2px solid var(--cor-destaque-verde); /* Efeito visual no hover */
 }
 
+/* Lista de Conteúdo */
 main ul {
     list-style-type: square; 
     text-align: left; 
@@ -145,62 +150,55 @@ main li {
     text-align: left;
 }
 
-figcaption {
-    font-size: 16px;
-    color: var(--cor-principal);
-    margin-top: 5px;
-    font-style: italic;
-    font-weight: normal;
-}
-
+/* Footer (Rodapé) */
 footer {
-    background-color: #444444;
+    background-color: var(--cor-principal); /* Usando cor principal para contraste */
     color: #E7E3DB;
-    font-size: 10px;
-    border-top: none;
+    padding: 15px 0;
     width: 100%;
-    margin-bottom: 0;    
+    margin-top: auto; /* Garante que fique no final da página */
 }
 
 footer p {
-    color: #E7E3DB;      
+    color: #E7E3DB; 
     max-width: none;
-    font-weight: normal;
-    font-size: 12px;
-    text-align:center;
+    font-size: 13px;
+    text-align: center;
+    margin: 0 auto;
 }
 
-
+/* Botão HOME (Ícone) */
 .botao-icone {
-    padding: 5px;
-    text-align: center;
-    line-height: 5px;
-    width: 15px; /* Largura do círculo */
-    height: 15px; /* Altura do círculo */
-    background-color: var(--cor-principal); /* A cor verde do círculo */
+    padding: 8px; /* Aumentado para melhor toque */
+    line-height: 1;
+    width: 16px; 
+    height: 16px;
+    background-color: var(--cor-principal);
     color: #E7E3DB;
     border-radius: 100%;
     text-decoration: none;
     position: absolute;
-    top: 5px; 
-    left: 6px;
-
+    top: 10px; /* Distanciamento do topo */
+    left: 10px; /* Distanciamento da esquerda */
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.botao-icone img { 
-    text-align: center; /* Para permitir margin auto na vertical */
-    font-size: px; /* Centraliza horizontalmente */
+.botao-icone span {
+    font-size: 18px !important; /* Ajustando tamanho do ícone */
 }
 
 .botao-icone:hover {
     background-color: var(--cor-destaque-verde); 
     transform: scale(1.1); 
-    transition: all 0.2s;
 }
 
+/* Galeria Grid */
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mais flexível */
     gap: 15px; 
     max-width: 1000px; 
     margin: 30px auto; 
@@ -217,7 +215,7 @@ footer p {
     width: 100%; 
     height: 250px; 
     object-fit: cover; 
-    border-radius: 0; 
+    border-radius: 10px 10px 0 0; /* Apenas no topo */
     margin: 0; 
     transition: transform 0.3s ease; 
 }
@@ -227,50 +225,43 @@ footer p {
 }
 
 .item-galeria figcaption {
-    font-size: 14px;
+    font-size: 16px; /* Reduzido para melhor leitura */
     padding: 10px 15px;
-    color: var(--cor-principal);
+    color: var(--cor-destaque-verde); /* Cor de destaque */
     font-style: normal;
     text-align: center;
+    font-weight: 700; /* Reduzido, 950 é muito pesado */
     border-top: 1px solid #d4cfc1;
-}
-
-@media (max-width: 768px) {
-    .galeria-grid {
-        grid-template-columns: 1fr; 
-    }
-}
-
-.item-galeria figcaption {
-    font-size: 20px;
-    color: #3a6d1a;
-    font-style: normal;
-    text-align: center;
-    font-weight: 950;
 }
 
 .galeria-grid a {
     text-decoration: none;
-  }
-
-.material-symbols-outlined{
-  color:#3a6d1a;
-  font-size: 100px ;
 }
 
-html {
-    height: 100%;
+/* Vídeo */
+.video-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.video-container figcaption {
+    margin-top: 10px;
+    text-align: center;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; 
-    padding: 0%;
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    .galeria-grid {
+        grid-template-columns: 1fr; 
+    }
 }
-
-main {
-    flex-grow: 1; 
-}
-
-
