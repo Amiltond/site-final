@@ -1,105 +1,92 @@
 :root {
-    --cor-principal: #212121; /* Preto quase total para mais impacto e contraste */
-    --cor-destaque-verde: #3a6d1a; 
-    --cor-fundo-principal: #F5F5F5; /* Cinza muito claro (quase branco) para limpeza */
-    --cor-fundo-container: white;
-    --cor-fundo-lista: #faf7f0;
-    --cor-borda-suave: #E0E0E0; /* Nova variável para bordas e linhas finas */
+    /* TEMA ESCURO (Padrão Alura-style) */
+    --cor-principal: #FFFFFF; /* Texto Branco Puro */
+    --cor-destaque-verde: #72CC50; /* Verde Neon/Brilhante */
+    --cor-fundo-principal: #1B1E21; /* Fundo Escuro */
+    --cor-fundo-container: #282C31; /* Cards Escuros */
+    --cor-fundo-lista: #343A40; 
+    --cor-borda-suave: #444444; /* Bordas Escuras */
 }
 
-/* Base e Tipografia (Roboto para corpo do texto) */
+/* Base, Tipografia e Estrutura */
 body {
-    font-family: 'Roboto', sans-serif; /* Fonte limpa para leitura */
+    font-family: 'Roboto', sans-serif;
     background-color: var(--cor-fundo-principal); 
+    color: var(--cor-principal);
     text-align: center;
     margin: 0;
     padding: 0;
     display: flex; 
     flex-direction: column; 
     min-height: 100vh; 
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Container Principal (Aumento da Sombra e Arredondamento) */
+/* Garante que elementos filhos herdem as cores */
+h1, h2, h3, p, figcaption {
+    color: var(--cor-principal);
+}
+
+strong, h3 {
+    color: var(--cor-destaque-verde);
+}
+
+/* Container Principal */
 .container {
     max-width: 1000px; 
-    margin: 30px auto 40px auto; /* Espaçamento superior maior */
-    padding: 40px 30px; /* Padding interno maior */
+    margin: 30px auto 40px auto; 
+    padding: 40px 30px; 
     background-color: var(--cor-fundo-container); 
     border-radius: 12px; 
-    /* Sombra de Alto Impacto */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra mais visível no fundo escuro */
     flex-grow: 1;
-}
-
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--cor-principal); 
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 h1 {
-    font-size: 32px; /* Título maior */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
     padding-bottom: 5px;
-    border-bottom: solid 2px var(--cor-borda-suave); /* Borda suave */
+    border-bottom: solid 2px var(--cor-borda-suave);
     margin-bottom: 20px;
 }
 
 h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 22px; 
-    margin-top: 5px;
-    padding-bottom: 5px;
-    max-width: 900px;
     margin: 5px auto 15px auto;
 }
 
-h3 {
-    color: var(--cor-destaque-verde); 
-    font-size: 24px;
-    margin-top: 35px;
-    margin-bottom: 15px;
-    text-align: left; 
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px 0;
-}
-
+/* Estilos de Texto e Parágrafos */
 p {
-    font-size: 17px; /* Fonte um pouco maior para leitura */
-    color: var(--cor-principal); 
+    font-size: 17px; 
     text-align: left; 
     max-width: 900px; 
-    margin: 15px auto; /* Maior espaçamento vertical */
-    line-height: 1.7; /* Maior espaçamento entre linhas */
+    margin: 15px auto; 
+    line-height: 1.7; 
 }
 
-strong {
-    color: var(--cor-destaque-verde); 
-    font-weight: bold;
-}
-
-/* Imagens e Figuras */
 .destaque-imagem {
     border-top: 3px solid var(--cor-destaque-verde);
     padding-top: 15px;
     font-weight: bold; 
     font-size: 20px; 
     text-align: center;
-    color: var(--cor-principal);
     max-width: 900px;
     margin: 30px auto 15px auto;
 }
 
+/* Imagens e Figuras */
 img {
     max-width: 100%; 
     height: auto; 
     display: block;
     margin: 20px auto;
-    border-radius: 12px; /* Arredondamento suave e consistente */
+    border-radius: 12px; 
 }
 
 figcaption {
     font-size: 15px;
-    color: var(--cor-principal);
     margin-top: 5px;
     font-style: italic;
     font-weight: normal;
@@ -117,7 +104,7 @@ nav {
 nav a {
     margin: 0 12px 8px 12px; 
     padding: 5px 0;
-    color: var(--cor-principal); 
+    color: var(--cor-principal);
     text-decoration: none; 
     font-weight: bold;
     font-size: 16px;
@@ -130,7 +117,7 @@ nav a:hover {
     border-bottom: 2px solid var(--cor-destaque-verde); 
 }
 
-/* Lista de Conteúdo (Usando nova cor de borda) */
+/* Lista de Conteúdo */
 main ul {
     list-style-type: square; 
     text-align: left; 
@@ -140,8 +127,8 @@ main ul {
     background-color: var(--cor-fundo-lista); 
     border: 1px solid var(--cor-borda-suave);
     border-radius: 8px;
-    color: var(--cor-principal);
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 
 main li {
@@ -151,39 +138,42 @@ main li {
     text-align: left;
 }
 
-/* Footer (Rodapé) */
+/* Footer (Rodapé) - Usa a cor do container para a base e texto mais suave */
 footer {
-    background-color: var(--cor-principal); 
-    color: #E7E3DB;
+    background-color: var(--cor-fundo-container); /* Fundo escuro */
+    border-top: 1px solid var(--cor-borda-suave);
     padding: 20px 0;
     width: 100%;
     margin-top: auto;
+    transition: background-color 0.5s ease;
 }
 
 footer p {
-    color: #E7E3DB; 
+    color: #AAAAAA; /* Texto cinza suave */
     max-width: none;
     font-size: 14px;
     text-align: center;
     margin: 0 auto;
 }
 
-/* Botão HOME (Ícone) */
+/* Botão Home (Removido o botão Tema) */
 .botao-icone {
     padding: 8px; 
     line-height: 1;
     width: 18px; 
     height: 18px;
-    background-color: var(--cor-principal);
-    color: #E7E3DB;
+    background-color: var(--cor-fundo-container); /* Usa a cor do container para ficar discreto */
+    color: var(--cor-principal); 
     border-radius: 100%;
     position: absolute;
     top: 15px; 
-    left: 15px; 
     transition: all 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    border: none;
+    left: 15px; /* Posição fixa na esquerda */
 }
 
 .botao-icone span {
@@ -192,11 +182,13 @@ footer p {
 
 .botao-icone:hover {
     background-color: var(--cor-destaque-verde); 
+    color: var(--cor-principal); 
     transform: scale(1.1); 
-    box-shadow: 0 0 10px var(--cor-destaque-verde); /* Efeito de luz verde */
+    box-shadow: 0 0 10px var(--cor-destaque-verde); 
 }
 
-/* Galeria Grid (Manutenção da Estrutura) */
+
+/* Galeria Grid */
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
@@ -208,13 +200,13 @@ footer p {
 .item-galeria {
     overflow: hidden; 
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave para os itens */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     background-color: var(--cor-fundo-container);
     transition: transform 0.3s ease;
 }
 
 .item-galeria:hover {
-    transform: translateY(-5px); /* Efeito de "levantar" no hover */
+    transform: translateY(-5px);
 }
 
 .item-galeria img {
@@ -227,8 +219,8 @@ footer p {
 }
 
 .item-galeria img:hover {
-    transform: scale(1.08); /* Efeito de zoom maior */
-    filter: brightness(1.1); /* Efeito de brilho */
+    transform: scale(1.08); 
+    filter: brightness(1.1); 
 }
 
 .item-galeria figcaption {
@@ -255,7 +247,7 @@ footer p {
     height: auto;
     display: block;
     border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 .video-container figcaption {
     margin-top: 10px;
@@ -267,7 +259,7 @@ footer p {
     .container {
         margin: 10px;
         padding: 20px;
-        box-shadow: none; /* Remove sombra em telas pequenas para economizar espaço */
+        box-shadow: none; 
     }
     .galeria-grid {
         gap: 15px;
