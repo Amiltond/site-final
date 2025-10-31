@@ -1,5 +1,5 @@
 :root {
-    /* TEMA ESCURO (Padrão Alura-style) */
+    /* TEMA ESCURO */
     --cor-principal: #FFFFFF; /* Texto Branco Puro */
     --cor-destaque-verde: #72CC50; /* Verde Neon/Brilhante */
     --cor-fundo-principal: #1B1E21; /* Fundo Escuro */
@@ -101,19 +101,23 @@ nav {
     justify-content: center;
 }
 
-/* ESTILO DO LINK NORMAL */
+/* ESTILO DO LINK NORMAL (COM BORDA APARENTE PARA CLARIDADE MÓVEL) */
 nav a {
     margin: 0 12px 8px 12px; 
-    padding: 8px 18px; /* Padding maior para o botão ficar visível */
+    padding: 8px 18px; 
     color: var(--cor-principal);
     text-decoration: none; 
     font-weight: bold;
     font-size: 16px;
-    border-radius: 25px; /* Bordas arredondadas para os botões */
-    position: relative; /* Essencial para o pseudo-elemento ::after */
-    overflow: hidden; /* Esconde o ::after antes de aparecer */
+    border-radius: 25px; 
+    
+    /* BORDA PADRÃO PARA INDICAR CLICABILIDADE */
+    border: 1px solid var(--cor-destaque-verde); 
+    
+    position: relative; 
+    overflow: hidden; 
     z-index: 1; 
-    transition: color 0.3s ease; /* Transição apenas para a cor do texto */
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; 
 }
 
 /* PSEUDO-ELEMENTO ::after (o fundo verde que vai aparecer) */
@@ -125,22 +129,36 @@ nav a::after {
     width: 100%;
     height: 100%;
     background-color: var(--cor-destaque-verde);
-    border-radius: 25px; /* Mantém o arredondamento */
-    z-index: -1; /* Fica atrás do texto */
-    transform: scaleX(0); /* Começa invisível, com largura zero */
-    transform-origin: center; /* Expande do centro */
-    transition: transform 0.4s ease-out; /* Animação suave para a expansão */
-    opacity: 0.6; /* Levemente transparente, como na referência */
+    border-radius: 25px;
+    z-index: -1; 
+    transform: scaleX(0); 
+    transform-origin: center; 
+    transition: transform 0.4s ease-out; 
+    opacity: 0.8; /* Um pouco opaco para cobrir a borda */
 }
 
 /* EFEITO HOVER: Fundo verde aparece e texto muda de cor */
 nav a:hover {
-    color: var(--cor-fundo-container); /* Texto fica escuro sobre o fundo verde */
+    color: var(--cor-fundo-container); /* Texto escuro sobre o fundo verde */
+    border-color: var(--cor-destaque-verde); /* Borda se mantém, mas é coberta pelo fundo */
 }
 
 nav a:hover::after {
     transform: scaleX(1); /* Expande o fundo verde para 100% da largura */
 }
+
+/* ESTILO PARA O BOTÃO DA PÁGINA ATUAL (Se você usar JavaScript) */
+nav a.nav-button-active {
+    color: var(--cor-fundo-container); 
+    border-color: var(--cor-destaque-verde);
+}
+
+nav a.nav-button-active::after {
+    transform: scaleX(1); 
+    opacity: 0.8; 
+    transition: none; 
+}
+
 
 /* Lista de Conteúdo */
 main ul {
