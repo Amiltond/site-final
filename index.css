@@ -1,15 +1,16 @@
 :root {
-    --cor-principal: #333333; 
+    --cor-principal: #212121; /* Preto quase total para mais impacto e contraste */
     --cor-destaque-verde: #3a6d1a; 
-    --cor-fundo-principal: #F0EDE5; /* Fundo suave */
+    --cor-fundo-principal: #F5F5F5; /* Cinza muito claro (quase branco) para limpeza */
     --cor-fundo-container: white;
     --cor-fundo-lista: #faf7f0;
+    --cor-borda-suave: #E0E0E0; /* Nova variável para bordas e linhas finas */
 }
 
-/* Base e Tipografia */
+/* Base e Tipografia (Roboto para corpo do texto) */
 body {
-    font-family: 'Arial', sans-serif; /* Fonte secundária para leitura */
-    background-color: var(--cor-fundo-principal); /* Fundo suave */
+    font-family: 'Roboto', sans-serif; /* Fonte limpa para leitura */
+    background-color: var(--cor-fundo-principal); 
     text-align: center;
     margin: 0;
     padding: 0;
@@ -18,58 +19,57 @@ body {
     min-height: 100vh; 
 }
 
-/* Container Principal (Usando DIV, não tag customizada) */
+/* Container Principal (Aumento da Sombra e Arredondamento) */
 .container {
     max-width: 1000px; 
-    margin: 20px auto 40px auto; 
-    padding: 30px 20px; 
-    background-color: var(--cor-fundo-container); /* Destaca o conteúdo no fundo suave */
-    border-radius: 12px; /* Cantos mais suaves */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin: 30px auto 40px auto; /* Espaçamento superior maior */
+    padding: 40px 30px; /* Padding interno maior */
+    background-color: var(--cor-fundo-container); 
+    border-radius: 12px; 
+    /* Sombra de Alto Impacto */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
     flex-grow: 1;
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     color: var(--cor-principal); 
-    margin-bottom: 10px;
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 32px; /* Título maior */
     padding-bottom: 5px;
-    border-bottom: solid 2px;
+    border-bottom: solid 2px var(--cor-borda-suave); /* Borda suave */
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 20px; 
+    font-size: 22px; 
     margin-top: 5px;
     padding-bottom: 5px;
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 5px auto 15px auto;
 }
 
 h3 {
     color: var(--cor-destaque-verde); 
-    font-size: 22px;
+    font-size: 24px;
     margin-top: 35px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-align: left; 
     max-width: 900px;
-    margin: 35px auto 10px auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 5px 0;
 }
 
 p {
-    margin-top: 1px;
-    font-size: 16px; 
+    font-size: 17px; /* Fonte um pouco maior para leitura */
     color: var(--cor-principal); 
     text-align: left; 
     max-width: 900px; 
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6; 
+    margin: 15px auto; /* Maior espaçamento vertical */
+    line-height: 1.7; /* Maior espaçamento entre linhas */
 }
 
 strong {
@@ -86,7 +86,7 @@ strong {
     text-align: center;
     color: var(--cor-principal);
     max-width: 900px;
-    margin: 20px auto 0 auto;
+    margin: 30px auto 15px auto;
 }
 
 img {
@@ -94,7 +94,7 @@ img {
     height: auto; 
     display: block;
     margin: 20px auto;
-    border-radius: 12px; /* Arredondamento suave */
+    border-radius: 12px; /* Arredondamento suave e consistente */
 }
 
 figcaption {
@@ -107,79 +107,79 @@ figcaption {
 
 /* Navegação e Links */
 nav {
-    margin-top: 10px; 
-    margin-bottom: 15px;
-    display: flex; /* Flexbox para alinhar links lado a lado se possível */
-    flex-wrap: wrap; /* Quebra para linhas menores */
+    margin-top: 15px; 
+    margin-bottom: 25px; 
+    display: flex; 
+    flex-wrap: wrap; 
     justify-content: center;
 }
 
 nav a {
-    margin: 0 10px 5px 10px; /* Espaçamento entre links */
+    margin: 0 12px 8px 12px; 
     padding: 5px 0;
     color: var(--cor-principal); 
     text-decoration: none; 
     font-weight: bold;
-    font-size: 15px;
-    transition: color 0.3s ease; 
-    border-bottom: 2px solid transparent; /* Borda transparente para transição */
+    font-size: 16px;
+    transition: color 0.3s ease, border-bottom 0.3s ease; 
+    border-bottom: 2px solid transparent; 
 }
 
 nav a:hover {
     color: var(--cor-destaque-verde); 
-    border-bottom: 2px solid var(--cor-destaque-verde); /* Efeito visual no hover */
+    border-bottom: 2px solid var(--cor-destaque-verde); 
 }
 
-/* Lista de Conteúdo */
+/* Lista de Conteúdo (Usando nova cor de borda) */
 main ul {
     list-style-type: square; 
     text-align: left; 
     max-width: 880px; 
-    margin: 20px auto; 
-    padding: 15px 20px;
+    margin: 30px auto; 
+    padding: 20px 30px;
     background-color: var(--cor-fundo-lista); 
-    border: 1px solid #d4cfc1;
-    border-radius: 5px;
+    border: 1px solid var(--cor-borda-suave);
+    border-radius: 8px;
     color: var(--cor-principal);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
 }
 
 main li {
-    margin: 10px 0;
-    font-size: 16px;
+    margin: 12px 0;
+    font-size: 17px;
     font-weight: normal;
     text-align: left;
 }
 
 /* Footer (Rodapé) */
 footer {
-    background-color: var(--cor-principal); /* Usando cor principal para contraste */
+    background-color: var(--cor-principal); 
     color: #E7E3DB;
-    padding: 15px 0;
+    padding: 20px 0;
     width: 100%;
-    margin-top: auto; /* Garante que fique no final da página */
+    margin-top: auto;
 }
 
 footer p {
     color: #E7E3DB; 
     max-width: none;
-    font-size: 13px;
+    font-size: 14px;
     text-align: center;
     margin: 0 auto;
 }
 
 /* Botão HOME (Ícone) */
 .botao-icone {
-    padding: 8px; /* Aumentado para melhor toque */
+    padding: 8px; 
     line-height: 1;
-    width: 16px; 
-    height: 16px;
+    width: 18px; 
+    height: 18px;
     background-color: var(--cor-principal);
     color: #E7E3DB;
     border-radius: 100%;
-    text-decoration: none;
     position: absolute;
-    top: 10px; /* Distanciamento do topo */
-    left: 10px; /* Distanciamento da esquerda */
+    top: 15px; 
+    left: 15px; 
     transition: all 0.2s;
     display: flex;
     align-items: center;
@@ -187,51 +187,58 @@ footer p {
 }
 
 .botao-icone span {
-    font-size: 18px !important; /* Ajustando tamanho do ícone */
+    font-size: 20px !important; 
 }
 
 .botao-icone:hover {
     background-color: var(--cor-destaque-verde); 
     transform: scale(1.1); 
+    box-shadow: 0 0 10px var(--cor-destaque-verde); /* Efeito de luz verde */
 }
 
-/* Galeria Grid */
+/* Galeria Grid (Manutenção da Estrutura) */
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mais flexível */
-    gap: 15px; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
     max-width: 1000px; 
-    margin: 30px auto; 
+    margin: 40px auto; 
 }
 
 .item-galeria {
     overflow: hidden; 
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais suave para os itens */
     background-color: var(--cor-fundo-container);
+    transition: transform 0.3s ease;
+}
+
+.item-galeria:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" no hover */
 }
 
 .item-galeria img {
     width: 100%; 
     height: 250px; 
     object-fit: cover; 
-    border-radius: 10px 10px 0 0; /* Apenas no topo */
+    border-radius: 10px 10px 0 0; 
     margin: 0; 
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease, filter 0.3s ease; 
 }
 
 .item-galeria img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08); /* Efeito de zoom maior */
+    filter: brightness(1.1); /* Efeito de brilho */
 }
 
 .item-galeria figcaption {
-    font-size: 16px; /* Reduzido para melhor leitura */
-    padding: 10px 15px;
-    color: var(--cor-destaque-verde); /* Cor de destaque */
+    font-size: 16px; 
+    padding: 15px;
+    color: var(--cor-destaque-verde); 
     font-style: normal;
     text-align: center;
-    font-weight: 700; /* Reduzido, 950 é muito pesado */
-    border-top: 1px solid #d4cfc1;
+    font-weight: 700; 
+    border-top: 1px solid var(--cor-borda-suave);
 }
 
 .galeria-grid a {
@@ -241,14 +248,14 @@ footer p {
 /* Vídeo */
 .video-container {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 30px auto;
 }
 .video-container video {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 .video-container figcaption {
     margin-top: 10px;
@@ -259,9 +266,14 @@ footer p {
 @media (max-width: 768px) {
     .container {
         margin: 10px;
-        padding: 15px;
+        padding: 20px;
+        box-shadow: none; /* Remove sombra em telas pequenas para economizar espaço */
     }
     .galeria-grid {
+        gap: 15px;
         grid-template-columns: 1fr; 
+    }
+    h1 {
+        font-size: 28px;
     }
 }
